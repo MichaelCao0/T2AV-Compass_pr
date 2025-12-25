@@ -2,7 +2,7 @@
 
 [![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://nju-link.github.io/T2AV-Compass/)
 [![Dataset](https://img.shields.io/badge/🤗-Dataset-yellow)](https://huggingface.co/datasets/NJU-LINK/T2AV-Compass)
-[![arXiv](https://img.shields.io/badge/arXiv-Paper-red)](https://arxiv.org/)
+[![arXiv](https://img.shields.io/badge/arXiv-Paper-red)](https://arxiv.org/abs/2512.21094)
 
 > 中文版：[README_cn.md](README_cn.md)
 
@@ -109,16 +109,20 @@ If you find this work useful, please cite:
 
 ```bibtex
 @misc{cao2025t2avcompass,
-  title        = {T2AV-Compass: Towards Unified Evaluation for Text-to-Audio-Video Generation},
-  author       = {Cao, Zhe and Wang, Tao and Wang, Jiaming and Wang, Yanghai and Zhang, Yuanxing and Chen, Jialu and Deng, Miao and Wang, Jiahao and Guo, Yubin and Liao, Chenxi and Zhang, Yize and Zhang, Zhaoxiang and Liu, Jiaheng},
-  year         = {2025},
-  note         = {Preprint},
+  title         = {T2AV-Compass: Towards Unified Evaluation for Text-to-Audio-Video Generation},
+  author        = {Cao, Zhe and Wang, Tao and Wang, Jiaming and Wang, Yanghai and Zhang, Yuanxing and Chen, Jialu and Deng, Miao and Wang, Jiahao and Guo, Yubin and Liao, Chenxi and Zhang, Yize and Zhang, Zhaoxiang and Liu, Jiaheng},
+  year          = {2025},
+  eprint        = {2512.21094},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  url           = {https://arxiv.org/abs/2512.21094},
 }
 ```
 
 ## 🔗 Links
 
 - **Project Page**: [nju-link.github.io/T2AV-Compass/](https://nju-link.github.io/T2AV-Compass/)
+- **arXiv Paper**: [arxiv.org/abs/2512.21094](https://arxiv.org/abs/2512.21094)
 - **Dataset**: [huggingface.co/datasets/NJU-LINK/T2AV-Compass](https://huggingface.co/datasets/NJU-LINK/T2AV-Compass)
 
 ## 📧 Contact
