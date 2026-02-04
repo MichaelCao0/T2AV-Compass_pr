@@ -92,7 +92,7 @@ Each sample is a JSON object with the following fields:
 ### Prerequisites
 
 - **Operating System**: Linux (Ubuntu 18.04+ recommended) or macOS
-- **GPU**: NVIDIA GPU with CUDA support (16GB+ VRAM recommended)
+- **GPU**: NVIDIA GPU with CUDA support
 - **CUDA**: Version 11.8 or higher
 - **Conda**: Miniconda or Anaconda installed
 - **Python**: 3.8 - 3.10

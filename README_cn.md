@@ -158,7 +158,7 @@ bash scripts/batch_eval_all.sh input Data/prompts.json Output
 ### 环境要求
 
 - **操作系统**: Linux (推荐 Ubuntu 18.04+) 或 macOS
-- **GPU**: NVIDIA GPU，支持 CUDA（建议 16GB+ 显存）
+- **GPU**: NVIDIA GPU，支持 CUDA
 - **CUDA**: 版本 11.8 或更高
 - **Conda**: 安装 Miniconda 或 Anaconda
 - **Python**: 3.8 - 3.10
