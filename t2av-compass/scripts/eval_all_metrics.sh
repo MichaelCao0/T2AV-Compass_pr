@@ -22,7 +22,7 @@ echo ""
 echo "This will run all objective metrics:"
 echo "  1. Video Quality:    VT (DOVER), VA (Aesthetic)"
 echo "  2. Audio Quality:    AA (AudioBox), SQ (NISQA)"
-echo "  3. Cross-modal:      T-V, T-A, A-V, DeSync"
+echo "  3. Cross-modal:      T-V, T-A, A-V (semantic), DeSync (temporal)"
 echo ""
 read -p "Press Enter to continue or Ctrl+C to cancel..."
 
@@ -107,7 +107,13 @@ bash "${SCRIPT_DIR}/eval_text_audio_alignment.sh" "${INPUT_DIR}" "${PROMPTS_JSON
 }
 
 echo ""
-echo "[7/8] Audio-Video Synchronization (DeSync)..."
+echo "[7/9] Audio-Video Alignment (A-V)..."
+bash "${SCRIPT_DIR}/eval_audio_video_alignment.sh" "${INPUT_DIR}" "${OUTPUT_DIR}" || {
+  echo "WARNING: Audio-Video alignment evaluation failed"
+}
+
+echo ""
+echo "[8/9] Audio-Video Synchronization (DeSync)..."
 bash "${SCRIPT_DIR}/eval_av_sync.sh" "${INPUT_DIR}" "${OUTPUT_DIR}" || {
   echo "WARNING: AV Sync evaluation failed"
 }

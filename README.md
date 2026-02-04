@@ -158,7 +158,7 @@ bash scripts/eval_all_metrics.sh input Data/prompts.json Output
 This will evaluate:
 - **Video Quality**: VT (Technical), VA (Aesthetic)
 - **Audio Quality**: AA (Aesthetic = mean of PQ & CU), SQ (Speech via NISQA)
-- **Cross-modal Alignment**: T-V, T-A, A-V, DeSync
+- **Cross-modal Alignment**: T-V (Text-Video), T-A (Text-Audio), A-V (Audio-Video semantic), DeSync (AV temporal sync)
 
 Results will be saved in the `Output/` directory as JSON files.
 
@@ -184,6 +184,9 @@ bash scripts/eval_text_video_alignment.sh input Data/prompts.json Output
 
 # Text-Audio Alignment (T-A)
 bash scripts/eval_text_audio_alignment.sh input Data/prompts.json Output
+
+# Audio-Video Alignment (A-V)
+bash scripts/eval_audio_video_alignment.sh input Output
 
 # Audio-Video Synchronization (DeSync)
 bash scripts/eval_av_sync.sh input Output

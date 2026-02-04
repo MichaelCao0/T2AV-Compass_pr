@@ -30,6 +30,7 @@ This directory contains evaluation scripts for all objective metrics in T2AV-Com
 |--------|--------|-------------|-------|
 | `eval_text_video_alignment.sh` | T-V | Text-Video Alignment - Semantic alignment via ImageBind | `bash eval_text_video_alignment.sh <input_dir> <prompts_json> <output_dir>` |
 | `eval_text_audio_alignment.sh` | T-A | Text-Audio Alignment - Semantic alignment via ImageBind | `bash eval_text_audio_alignment.sh <input_dir> <prompts_json> <output_dir>` |
+| `eval_audio_video_alignment.sh` | A-V | Audio-Video Alignment - Semantic alignment via ImageBind (text-independent) | `bash eval_audio_video_alignment.sh <input_dir> <output_dir>` |
 | `eval_av_sync.sh` | DeSync | Audio-Video Synchronization - Temporal sync via Synchformer | `bash eval_av_sync.sh <input_dir> <output_dir>` |
 
 ### Helper Scripts
@@ -61,6 +62,7 @@ bash eval_speech_quality.sh input Output
 # Cross-modal alignment
 bash eval_text_video_alignment.sh input Data/prompts.json Output
 bash eval_text_audio_alignment.sh input Data/prompts.json Output
+bash eval_audio_video_alignment.sh input Output
 bash eval_av_sync.sh input Output
 ```
 
@@ -144,6 +146,7 @@ Output/
 ├── speech_quality.json           # SQ scores
 ├── text_video_alignment.json     # T-V alignment scores
 ├── text_audio_alignment.json     # T-A alignment scores
+├── audio_video_alignment.json    # A-V alignment scores
 ├── av_sync.json                  # DeSync scores
 ├── evaluation_summary.json       # Summary of all metrics
 └── audio_wav/                    # Extracted audio files
