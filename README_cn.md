@@ -34,8 +34,8 @@
 | | VA (Video Aesthetic) | 通过 LAION-Aesthetic V2.5 评估高层感知属性 |
 | **音频质量** | AA (Audio Aesthetic) | PQ 与 CU 的均值（感知质量与内容有用性） |
 | | SQ (Speech Quality) | 基于 NISQA 的语音质量 |
-| **跨模态对齐** | T-A | 通过 CLAP 的文本-音频对齐 |
-| | T-V | 通过 VideoCLIP-XL-V2 的文本-视频对齐 |
+| **跨模态对齐** | T-A | 通过 ImageBind 的文本-音频对齐 |
+| | T-V | 通过 ImageBind 的文本-视频对齐 |
 | | A-V | 通过 ImageBind 的音频-视频对齐 |
 | | DS (DeSync) | 时间同步误差（越低越好） |
 | | LS (LatentSync) | 说话人脸场景的唇形同步质量 |
@@ -91,7 +91,7 @@
 
 ## 🔧 客观评测：环境配置与使用
 
-客观指标（VT、VA、PQ、CU、T-V、T-A、A-V、DeSync、LatentSync 等）的评测代码位于 **`t2av-compass/`** 目录。详细说明见 [readme.md](readme.md)，此处为简要步骤。
+客观指标（VT、VA、AA、SQ、T-V、T-A、A-V、DeSync、LatentSync 等）的评测代码位于 **`t2av-compass/`** 目录。详细说明见 [readme.md](readme.md)，此处为简要步骤。
 
 ### 环境要求
 

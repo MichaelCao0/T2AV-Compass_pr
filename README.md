@@ -34,8 +34,8 @@ This package includes **500 taxonomy-driven prompts** and fine-grained checklist
 | | VA (Video Aesthetic) | High-level perceptual attributes via LAION-Aesthetic V2.5 |
 | **Audio Quality** | AA (Audio Aesthetic) | Mean of PQ (Perceptual Quality) and CU (Content Usefulness) |
 | | SQ (Speech Quality) | Speech quality via NISQA |
-| **Cross-modal Alignment** | T-A | Text–Audio alignment via CLAP |
-| | T-V | Text–Video alignment via VideoCLIP-XL-V2 |
+| **Cross-modal Alignment** | T-A | Text–Audio alignment via ImageBind |
+| | T-V | Text–Video alignment via ImageBind |
 | | A-V | Audio–Video alignment via ImageBind |
 | | DS (DeSync) | Temporal synchronization error (lower is better) |
 | | LS (LatentSync) | Lip-sync quality for talking-face scenarios |
