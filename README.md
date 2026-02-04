@@ -121,13 +121,15 @@ Organize your generated videos and prompts:
 
 ```
 T2AV-Compass/
-├── input/                    # Your generated videos
+├── input/                    # Your generated videos (place in repo root)
 │   ├── video_001.mp4
 │   ├── video_002.mp4
 │   └── ...
-├── Data/
-│   └── prompts.json         # Prompts corresponding to videos
 └── t2av-compass/            # Evaluation code
+    ├── Data/
+    │   └── prompts.json     # Prompts corresponding to videos
+    ├── scripts/             # Evaluation scripts
+    └── Objective/           # Metric implementations
 ```
 
 The `prompts.json` should follow this format:
@@ -152,8 +154,13 @@ Run all objective metrics at once:
 
 ```bash
 cd t2av-compass
-bash scripts/eval_all_metrics.sh input Data/prompts.json Output
+bash scripts/eval_all_metrics.sh ../input Data/prompts.json ../Output
 ```
+
+**Arguments:**
+- `../input`: Path to video directory (relative to t2av-compass/)
+- `Data/prompts.json`: Path to prompts file (relative to t2av-compass/)
+- `../Output`: Output directory (relative to t2av-compass/)
 
 This will evaluate:
 - **Video Quality**: VT (Technical), VA (Aesthetic)
@@ -168,32 +175,34 @@ Evaluate specific metrics independently:
 
 ```bash
 # Video Aesthetic (VA)
-bash scripts/eval_video_aesthetic.sh input Output
+bash scripts/eval_video_aesthetic.sh ../input ../Output
 
 # Video Technical (VT) 
-bash scripts/eval_video_technical.sh input Output
+bash scripts/eval_video_technical.sh ../input ../Output
 
 # Audio Aesthetic (AA = mean of PQ & CU)
-bash scripts/eval_audio_aesthetic.sh input Output
+bash scripts/eval_audio_aesthetic.sh ../input ../Output
 
 # Speech Quality (SQ via NISQA)
-bash scripts/eval_speech_quality.sh input Output
+bash scripts/eval_speech_quality.sh ../input ../Output
 
 # Text-Video Alignment (T-V)
-bash scripts/eval_text_video_alignment.sh input Data/prompts.json Output
+bash scripts/eval_text_video_alignment.sh ../input Data/prompts.json ../Output
 
 # Text-Audio Alignment (T-A)
-bash scripts/eval_text_audio_alignment.sh input Data/prompts.json Output
+bash scripts/eval_text_audio_alignment.sh ../input Data/prompts.json ../Output
 
 # Audio-Video Alignment (A-V)
-bash scripts/eval_audio_video_alignment.sh input Output
+bash scripts/eval_audio_video_alignment.sh ../input ../Output
 
 # Audio-Video Synchronization (DeSync)
-bash scripts/eval_av_sync.sh input Output
+bash scripts/eval_av_sync.sh ../input ../Output
 
 # Lip-Sync Quality (LatentSync) - for talking-face videos
-bash scripts/eval_lipsync.sh input Output
+bash scripts/eval_lipsync.sh ../input ../Output
 ```
+
+**Note:** All paths are relative to `t2av-compass/` directory.
 
 Each script:
 - Automatically creates the required conda environment on first run

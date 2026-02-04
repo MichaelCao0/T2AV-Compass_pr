@@ -187,13 +187,15 @@ cd T2AV-Compass
 
 ```
 T2AV-Compass/
-├── input/                    # 你生成的视频
+├── input/                    # 你生成的视频（放在仓库根目录）
 │   ├── video_001.mp4
 │   ├── video_002.mp4
 │   └── ...
-├── Data/
-│   └── prompts.json         # 对应的提示词
 └── t2av-compass/            # 评测代码
+    ├── Data/
+    │   └── prompts.json     # 对应的提示词
+    ├── scripts/             # 评测脚本
+    └── Objective/           # 指标实现
 ```
 
 `prompts.json` 格式示例：
@@ -218,8 +220,13 @@ T2AV-Compass/
 
 ```bash
 cd t2av-compass
-bash scripts/eval_all_metrics.sh input Data/prompts.json Output
+bash scripts/eval_all_metrics.sh ../input Data/prompts.json ../Output
 ```
+
+**参数说明：**
+- `../input`: 视频目录路径（相对于 t2av-compass/）
+- `Data/prompts.json`: 提示词文件路径（相对于 t2av-compass/）
+- `../Output`: 输出目录（相对于 t2av-compass/）
 
 这将评测：
 - **视频质量**: VT（技术质量）、VA（美学质量）
@@ -234,32 +241,34 @@ bash scripts/eval_all_metrics.sh input Data/prompts.json Output
 
 ```bash
 # 视频美学 (VA)
-bash scripts/eval_video_aesthetic.sh input Output
+bash scripts/eval_video_aesthetic.sh ../input ../Output
 
 # 视频技术质量 (VT) 
-bash scripts/eval_video_technical.sh input Output
+bash scripts/eval_video_technical.sh ../input ../Output
 
 # 音频美学 (AA = PQ 与 CU 的均值)
-bash scripts/eval_audio_aesthetic.sh input Output
+bash scripts/eval_audio_aesthetic.sh ../input ../Output
 
 # 语音质量 (SQ，使用 NISQA)
-bash scripts/eval_speech_quality.sh input Output
+bash scripts/eval_speech_quality.sh ../input ../Output
 
 # 文本-视频对齐 (T-V)
-bash scripts/eval_text_video_alignment.sh input Data/prompts.json Output
+bash scripts/eval_text_video_alignment.sh ../input Data/prompts.json ../Output
 
 # 文本-音频对齐 (T-A)
-bash scripts/eval_text_audio_alignment.sh input Data/prompts.json Output
+bash scripts/eval_text_audio_alignment.sh ../input Data/prompts.json ../Output
 
 # 音频-视频对齐 (A-V)
-bash scripts/eval_audio_video_alignment.sh input Output
+bash scripts/eval_audio_video_alignment.sh ../input ../Output
 
 # 音视频同步 (DeSync)
-bash scripts/eval_av_sync.sh input Output
+bash scripts/eval_av_sync.sh ../input ../Output
 
 # 唇形同步质量 (LatentSync) - 用于有说话人脸的视频
-bash scripts/eval_lipsync.sh input Output
+bash scripts/eval_lipsync.sh ../input ../Output
 ```
+
+**注意：** 所有路径都是相对于 `t2av-compass/` 目录。
 
 每个脚本会：
 - 首次运行时自动创建所需的 conda 环境

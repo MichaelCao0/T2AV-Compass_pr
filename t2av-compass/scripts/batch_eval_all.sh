@@ -2,7 +2,7 @@
 set -euo pipefail
 
 INPUT_DIR="${1:-input}"
-PROMPTS_JSON="${2:-${INPUT_DIR}/prompts.json}"
+PROMPTS_JSON="${2:-Data/prompts.json}"
 OUTPUT_DIR="${3:-Output}"
 
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
