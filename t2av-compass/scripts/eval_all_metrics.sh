@@ -22,7 +22,7 @@ echo ""
 echo "This will run all objective metrics:"
 echo "  1. Video Quality:    VT (DOVER), VA (Aesthetic)"
 echo "  2. Audio Quality:    AA (AudioBox), SQ (NISQA)"
-echo "  3. Cross-modal:      T-V, T-A, A-V (semantic), DeSync (temporal)"
+echo "  3. Cross-modal:      T-V, T-A, A-V (semantic), DeSync (temporal), LS (lip-sync)"
 echo ""
 read -p "Press Enter to continue or Ctrl+C to cancel..."
 
@@ -113,9 +113,15 @@ bash "${SCRIPT_DIR}/eval_audio_video_alignment.sh" "${INPUT_DIR}" "${OUTPUT_DIR}
 }
 
 echo ""
-echo "[8/9] Audio-Video Synchronization (DeSync)..."
+echo "[8/10] Audio-Video Synchronization (DeSync)..."
 bash "${SCRIPT_DIR}/eval_av_sync.sh" "${INPUT_DIR}" "${OUTPUT_DIR}" || {
   echo "WARNING: AV Sync evaluation failed"
+}
+
+echo ""
+echo "[9/10] Lip-Sync Quality (LatentSync)..."
+bash "${SCRIPT_DIR}/eval_lipsync.sh" "${INPUT_DIR}" "${OUTPUT_DIR}" || {
+  echo "WARNING: LatentSync evaluation failed (may be no talking faces)"
 }
 
 # ========================================

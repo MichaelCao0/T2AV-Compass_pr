@@ -224,7 +224,7 @@ bash scripts/eval_all_metrics.sh input Data/prompts.json Output
 这将评测：
 - **视频质量**: VT（技术质量）、VA（美学质量）
 - **音频质量**: AA（音频美学 = PQ 与 CU 的均值）、SQ（语音质量，使用 NISQA）
-- **跨模态对齐**: T-V（文本-视频）、T-A（文本-音频）、A-V（音频-视频语义对齐）、DeSync（音视频时间同步）
+- **跨模态对齐**: T-V（文本-视频）、T-A（文本-音频）、A-V（音频-视频语义对齐）、DeSync（音视频时间同步）、LS（说话人脸的唇形同步）
 
 结果将保存在 `Output/` 目录下的 JSON 文件中。
 
@@ -256,6 +256,9 @@ bash scripts/eval_audio_video_alignment.sh input Output
 
 # 音视频同步 (DeSync)
 bash scripts/eval_av_sync.sh input Output
+
+# 唇形同步质量 (LatentSync) - 用于有说话人脸的视频
+bash scripts/eval_lipsync.sh input Output
 ```
 
 每个脚本会：

@@ -32,6 +32,7 @@ This directory contains evaluation scripts for all objective metrics in T2AV-Com
 | `eval_text_audio_alignment.sh` | T-A | Text-Audio Alignment - Semantic alignment via ImageBind | `bash eval_text_audio_alignment.sh <input_dir> <prompts_json> <output_dir>` |
 | `eval_audio_video_alignment.sh` | A-V | Audio-Video Alignment - Semantic alignment via ImageBind (text-independent) | `bash eval_audio_video_alignment.sh <input_dir> <output_dir>` |
 | `eval_av_sync.sh` | DeSync | Audio-Video Synchronization - Temporal sync via Synchformer | `bash eval_av_sync.sh <input_dir> <output_dir>` |
+| `eval_lipsync.sh` | LS | Lip-Sync Quality - Lip-sync evaluation via LatentSync (for talking-face videos) | `bash eval_lipsync.sh <input_dir> <output_dir>` |
 
 ### Helper Scripts
 
@@ -64,6 +65,7 @@ bash eval_text_video_alignment.sh input Data/prompts.json Output
 bash eval_text_audio_alignment.sh input Data/prompts.json Output
 bash eval_audio_video_alignment.sh input Output
 bash eval_av_sync.sh input Output
+bash eval_lipsync.sh input Output  # For talking-face videos
 ```
 
 ## 📋 Parameters
@@ -96,8 +98,9 @@ Each script automatically:
 | `t2av-dover` | Video Technical (VT) | 3.10 |
 | `t2av-audiobox` | Audio Aesthetic (AA) | 3.10 |
 | `t2av-nisqa` | Speech Quality (SQ) | 3.8 |
-| `t2av-imagebind` | T-V, T-A alignment | 3.10 |
+| `t2av-imagebind` | T-V, T-A, A-V alignment | 3.10 |
 | `t2av-synchformer` | AV Sync (DeSync) | 3.8 |
+| `t2av-latentsync` | Lip-Sync (LS) | 3.10 |
 
 ### Manual Environment Management
 
@@ -148,6 +151,7 @@ Output/
 ├── text_audio_alignment.json     # T-A alignment scores
 ├── audio_video_alignment.json    # A-V alignment scores
 ├── av_sync.json                  # DeSync scores
+├── lipsync.json                  # LS (Lip-sync) scores
 ├── evaluation_summary.json       # Summary of all metrics
 └── audio_wav/                    # Extracted audio files
     ├── video_001.wav
@@ -195,8 +199,9 @@ conda remove -n t2av-aesthetic --all
 | VT (DOVER) | 6 GB | 12 GB |
 | AA (AudioBox) | 4 GB | 8 GB |
 | SQ (NISQA) | 2 GB | 4 GB |
-| T-V, T-A (ImageBind) | 8 GB | 16 GB |
+| T-V, T-A, A-V (ImageBind) | 8 GB | 16 GB |
 | DeSync (Synchformer) | 6 GB | 12 GB |
+| LS (LatentSync) | 8 GB | 12 GB |
 
 ## 📝 Notes
 
